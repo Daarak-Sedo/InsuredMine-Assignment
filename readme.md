@@ -1,10 +1,10 @@
+# Assignment details:
 
-Install Packages
+Create a set of APIs using Node(Express) + MongoDB(mongoose) which should implement
+the following features.
 
--- npm install
+- Authentication module using jwt
+- Upload and save contact (csv file) through api in db using service workers.
 
-Start Application
-
--- node app.js
 
 Application Run On : http://localhost:3000
