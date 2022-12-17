@@ -3,12 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CSV TO JSON data Upload In Database </title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
+
 <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-                <a class="navbar-brand" href="#">CsvToMongo</a>
+                <a class="navbar-brand" href="#">CsvToMongoDB</a>
               </nav>
     <div class="container">
         <div class=" nav justify-content-center" style="margin-top:100px;">
@@ -23,13 +24,14 @@
           </div>
     </div><br>
     <%if(data){%>
+
     <div>
         <table class="table table-hover table-responsive table-stripped  nav justify-content-center" style="width: auto" > 
                 <thead>
                     <tr class="bg-primary">
                         <th>S.no</th>
-                        <th style="padding-right: 1em">LastName</th>
                         <th style="padding-right: 1em">FirstName</th>
+                        <th style="padding-right: 1em">LastName</th>
                         <th style="padding-right:2em;padding-left:2em;">SSN</th>
                         <th>Test1</th>
                         <th>Test2</th>
@@ -43,8 +45,8 @@
                     <%for(var i=0;i< data.length;i++){%>
                     <tr class="text-center">
                                   <td ><%= i+1%></td>
-                                  <td style="padding-right: 1em"><%= data[i].LastName%></td>
                                   <td style="padding-left: 1em;"><%= data[i].FirstName%></td>
+                                  <td style="padding-right: 1em"><%= data[i].LastName%></td>
                                   <td style="padding-right:1em;padding-left:1em;"><%= data[i].SSN%></td>
                                   <td style="padding-left: 1em"><%= data[i].Test1%></td>
                                   <td style="padding-left: 1em"><%= data[i].Test2%></td>
@@ -58,6 +60,7 @@
         </table>
     </div>
     <%}%>
+
 <br>
 </body>
 </html>

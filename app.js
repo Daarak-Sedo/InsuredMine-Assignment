@@ -1,11 +1,13 @@
 var express     = require('express');
+var bodyParser  = require('body-parser');
 var mongoose    = require('mongoose');
 var multer      = require('multer');
 var path        = require('path');
 var csvModel    = require('./models/csv');
 var csv         = require('csvtojson');
-var bodyParser  = require('body-parser');
 
+
+//--------------------------------------Storage setting ------------------------------------->
 var storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,'./public/uploads');
@@ -17,24 +19,29 @@ var storage = multer.diskStorage({
 
 var uploads = multer({storage:storage});
 
-//connect to db
-mongoose.connect('mongodb://localhost:27017/csvdemos',{useNewUrlParser:true})
+
+//---------------- connect to db---------------------------------------------------------->
+mongoose.connect('mongodb+srv://Bhuwan:fake2fake@cluster0.pjh64tt.mongodb.net/csv_to_json?retryWrites=true&w=majority',{useNewUrlParser:true})
 .then(()=>console.log('connected to db'))
 .catch((err)=>console.log(err))
 
 //init app
 var app = express();
 
-//set the template engine
+
+//-------------------set the template engine-------------------------------------------------->
 app.set('view engine','ejs');
 
-//fetch data from the request
+
+//--------------------------fetch data from the request----------------------------------------->
 app.use(bodyParser.urlencoded({extended:false}));
 
-//static folder
+
+//-----------------------------static folder---------------------------------------------------->
 app.use(express.static(path.resolve(__dirname,'public')));
 
-//default pageload
+
+//----------------------------default pageload---------------------------------------------------->
 app.get('/',(req,res)=>{
     csvModel.find((err,data)=>{
          if(err){
@@ -49,10 +56,12 @@ app.get('/',(req,res)=>{
     });
 });
 
+
+
 var temp ;
 
 app.post('/',uploads.single('csv'),(req,res)=>{
- //convert csvfile to jsonArray   
+ //--------------------convert csvfile to jsonArray-------------------------------------------------->
 csv()
 .fromFile(req.file.path)
 .then((jsonObj)=>{
@@ -79,6 +88,8 @@ csv()
    });
 });
 
-//assign port
+
+//------------------------assign port------------------------------------------------------------>
 var port = process.env.PORT || 3000;
+
 app.listen(port,()=>console.log('server run at port '+port));
