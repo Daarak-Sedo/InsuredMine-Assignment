@@ -9,7 +9,7 @@ the following features.
 
 Application Run On : http://localhost:3000
 
-<img src="/repository/assets/employee.png" alt="Employee data" title="Employee Data title">
+OutLook (Ui) of Project - https://drive.google.com/file/d/1ytXikLL2JVY2a9EaSPWtSLKvM1eNmwbE
 
 
 
