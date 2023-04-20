@@ -1,66 +1,120 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSV TO JSON data Upload In Database </title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 1440px !important;
+        }
+
+        .main-table tbody {
+            width: 100%;
+            overflow: scroll;
+            height: 420px;
+        }
+    </style>
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-                <a class="navbar-brand" href="#">CsvToMongoDB</a>
-              </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="#">CSV TO JSON </a>
+    </nav>
     <div class="container">
         <div class=" nav justify-content-center" style="margin-top:100px;">
-         <div class="card border-warning mb-3 " style="max-width: 20rem;">
-                <div class="card-header"><h5>Upload csv file</h5></div>
-                <div class="card-body">
-                        <form action="/" method="post" enctype="multipart/form-data">
-                            <input type="file" name="csv"><br><br>
-                         <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">submit</button></div>   
-                        </form>
+            <div class="card border-warning mb-3 " style="max-width: 32rem;">
+                <div class="card-header">
+                    <h5>Upload csv file</h5>
                 </div>
-          </div>
-    </div><br>
-    <%if(data){%>
+                <div class="card-body">
+                    <form action="/" method="post" enctype="multipart/form-data">
+                        <input type="file" name="csv"><br><br>
+                        <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><br>
+        <%if(data){%>
 
-    <div>
-        <table class="table table-hover table-responsive table-stripped  nav justify-content-center" style="width: auto" > 
-                <thead>
+            <div>
+                <table
+                    class="table table-hover table-responsive table-stripped  nav justify-content-center shadow p-3 mb-5 bg-white rounded main-table"
+                    style="width: 100%; overflow: scroll;">
+
                     <tr class="bg-primary">
                         <th>S.no</th>
-                        <th style="padding-right: 1em">FirstName</th>
-                        <th style="padding-right: 1em">LastName</th>
-                        <th style="padding-right:2em;padding-left:2em;">SSN</th>
-                        <th>Test1</th>
-                        <th>Test2</th>
-                        <th>Test3</th>
-                        <th>Test4</th>
-                        <th>Final</th>
-                        <th>Grade</th>
+                        <th style="padding-right: 94px;">Agent</th>
+                        <th>User Type</th>
+                        <th>Policy_mode</th>
+                        <th>Producer</th>
+                        <th>Policy_number</th>
+                        <th>Policy Type</th>
+                        <th>Comapany Name</th>
+                        <th>Policy Start Date</th>
+                        <th>Policy End Date</th>
+                        <th>Category Name</th>
+                        <th>CSR</th>
+                        <th>Account Name</th>
+                        <th>Email</th>
                     </tr>
-                </thead>
-                <tbody style="overflow-x: scroll; height:350px;" class="table-bordered">
-                    <%for(var i=0;i< data.length;i++){%>
-                    <tr class="text-center">
-                                  <td ><%= i+1%></td>
-                                  <td style="padding-left: 1em;"><%= data[i].FirstName%></td>
-                                  <td style="padding-right: 1em"><%= data[i].LastName%></td>
-                                  <td style="padding-right:1em;padding-left:1em;"><%= data[i].SSN%></td>
-                                  <td style="padding-left: 1em"><%= data[i].Test1%></td>
-                                  <td style="padding-left: 1em"><%= data[i].Test2%></td>
-                                  <td style="padding-left: 1em"><%= data[i].Test3%></td>
-                                  <td style="padding-left: 1.2em"><%= data[i].Test4%></td>
-                                  <td style="padding-left: 1.2em"><%= data[i].Final%></td>
-                                  <td style="padding-left: 1.2em"><%= data[i].Grade%></td>
-                    </tr>
-                    <%}%>
-                </tbody>
-        </table>
-    </div>
-    <%}%>
 
-<br>
+                    <%for(var i=0;i< data.length;i++){%>
+                        <tr class="text-center table-bordered ">
+                            <td>
+                                <%= i+1%>
+                            </td>
+                            <td style="padding-right: 86px;">
+                                <%= data[i].agent%>
+                            </td>
+                            <td style="padding-right: 86px;">
+                                <%= data[i].userType%>
+                            </td>
+                            <td>
+                                <%= data[i].policy_mode%>
+                            </td>
+                            <td>
+                                <%= data[i].producer%>
+                            </td>
+                            <td>
+                                <%= data[i].policy_number%>
+                            </td>
+                            <td>
+                                <%= data[i].policy_type%>
+                            </td>
+                            <td>
+                                <%= data[i].company_name%>
+                            </td>
+                            <td>
+                                <%= data[i].policy_start_date%>
+                            </td>
+                            <td>
+                                <%= data[i].policy_end_date%>
+                            </td>
+                            <td>
+                                <%= data[i].category_name%>
+                            </td>
+                            <td>
+                                <%= data[i].csr%>
+                            </td>
+                            <td>
+                                <%= data[i].account_name%>
+                            </td>
+                            <td>
+                                <%= data[i].email%>
+                            </td>
+                        </tr>
+                        <%}%>
+                </table>
+            </div>
+            <%}%>
+
+                <br>
+
 </body>
+
 </html>
