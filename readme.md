@@ -11,9 +11,8 @@ Application Run On : http://localhost:3000
 
 OutLook (Ui) of Project - https://drive.google.com/file/d/1ytXikLL2JVY2a9EaSPWtSLKvM1eNmwbE
 
+<img width="1440" alt="Screenshot 2023-04-20 at 6 12 32 PM" src="https://user-images.githubusercontent.com/107810689/233404655-fc5e51e5-d23d-48d1-88a9-c125823f5138.png">
 
-
-<img width="1440" alt="Screenshot 2023-02-10 at 12 50 55 PM" src="https://user-images.githubusercontent.com/107810689/233404313-7e4d6627-49a2-4c83-87a9-22aa37162705.png">
 
 
 
