@@ -13,3 +13,7 @@ OutLook (Ui) of Project - https://drive.google.com/file/d/1ytXikLL2JVY2a9EaSPWtS
 
 
 
+<img width="1440" alt="Screenshot 2023-02-10 at 12 50 55 PM" src="https://user-images.githubusercontent.com/107810689/233404313-7e4d6627-49a2-4c83-87a9-22aa37162705.png">
+
+
+
